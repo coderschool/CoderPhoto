@@ -48,3 +48,4 @@ end
 gem 'rails_12factor', group: :production
 gem 'devise'
 gem "letter_opener", :group => :development
+gem 'dotenv-rails', :groups => [:development, :test]
