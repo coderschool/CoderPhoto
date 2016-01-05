@@ -6,7 +6,9 @@ class PhotosController < ApplicationController
   def like
     @photo = Photo.find params[:id]
     @vote = @photo.liked_by! current_user
-    PhotoMailer.notify_likes(@vote).deliver_now
+    # spawn another process
+    # send email
+    PhotoMailer.notify_likes(@vote).deliver_later
   end
 
   def unlike
