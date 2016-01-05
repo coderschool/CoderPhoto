@@ -9,7 +9,9 @@
 	<% @photos.each do |photo| %>
 		<div class="row">
 			<div class="col-xs-4 col-xs-offset-4">
-				<%= render photo %>
+        <%= div_for photo, class: 'card' do %>
+          <%= render photo %>
+        <% end %>
 			</div>
 		</div>
 	<% end %>

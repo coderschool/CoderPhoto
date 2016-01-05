@@ -8,7 +8,7 @@ class Photo < ActiveRecord::Base
 
   def unliked_by!(user)
     raise "Not liked" unless liked_by?(user)
-    votes.where(voter: user).first.destry
+    votes.where(voter: user).first.destroy
   end
 
   def liked_by?(user)
