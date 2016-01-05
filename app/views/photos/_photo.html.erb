@@ -7,7 +7,7 @@
   	<%= image_tag(photo.url, class: "card-img-top img-responsive") %>
 	<div class="card-block">
 	    <p class="card-text"><%= photo.caption %></p>
-	    <a href="#" class="btn btn-primary">Button</a>
+      <%= link_to "Like", like_photo_path(photo), method: 'put', remote: true, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>

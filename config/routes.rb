@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     collection do
       get 'index'
     end
+
+    member do
+      put 'like'
+    end
   end
 
   root 'photos#index'
