@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :photos do 
     collection do
       get 'index'
+    end
+
+    member do
+      put 'like'
+      put 'unlike'
     end
   end
 

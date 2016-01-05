@@ -1,5 +1,5 @@
 
-<div class="card">
+<div class="card" id="<%= dom_id photo %>">
 	<div class="card-block">
 		<h6 class="card-title"><%= photo.username %></h6>
 		<p class="card-subtitle text-muted"><%= photo.likes_count %> likes</p>
@@ -7,7 +7,12 @@
   	<%= image_tag(photo.url, class: "card-img-top img-responsive") %>
 	<div class="card-block">
 	    <p class="card-text"><%= photo.caption %></p>
-	    <a href="#" class="btn btn-primary">Button</a>
+      <% if photo.liked_by?(current_user) %>
+        <%= link_to "Unlike", unlike_photo_path(photo), class: 'btn btn-danger', method: 'put', remote: true %>
+      <% else %>
+        <%= link_to "Like", like_photo_path(photo), class: 'btn btn-primary', method: 'put', remote: true %>
+      <% end %>
+      <p class="card-subtitle text-muted"><%= photo.likes_count %> likes</p>
     </div>
   </div>
 </div>
