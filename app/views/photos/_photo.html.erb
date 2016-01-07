@@ -16,3 +16,13 @@
     Please log in to to Like.
   <% end %>
 </div>
+
+<div class="card-block">
+  <div class="comments">
+    <%= render "photo_comments", photo: photo %>
+  </div>
+  <%= form_for [photo, Comment.new], remote: true do |f| %>
+    <%= f.text_field :body, placeholder: "Add a comment" %>
+  <% end %>
+</div>
+

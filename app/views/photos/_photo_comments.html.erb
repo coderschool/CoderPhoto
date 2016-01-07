@@ -1,0 +1,6 @@
+<% photo.comments.each do |comment| %>
+  <%= div_for comment do %>
+    <strong><%= comment.user.email %></strong>
+    <%= comment.body %>
+  <% end %>
+<% end %>

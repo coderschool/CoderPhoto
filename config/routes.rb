@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       put 'like'
       put 'unlike'
     end
+
+    resources :comments
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

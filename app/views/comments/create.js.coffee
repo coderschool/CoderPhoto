@@ -1,0 +1,5 @@
+<% if @photo.persisted? %>
+  $("#<%= dom_id @photo %> .comments").html("<%= j render 'photos/photo_comments', photo: @photo %>")
+<% else %>
+  $("#<%= dom_id @photo %> .comments").append("Error: #{@photo.errors.full_messages.to_sentence}")
+<% end %>
