@@ -1,17 +1,11 @@
-<div class="container">
-	<br/>		
-	<div class="jumbotron">
-        <h1 class="display-3">CoderPhoto</h1>
-        <p class="lead">@chug2k and @harley's lab project to show you trending photos from Instagram</p>
+<div id="timeline" style="margin-top:100px">
+  <% @photos.each do |photo| %>
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+        <%= div_for photo, class: 'card' do %>
+          <%= render photo %>
+        <% end %>
       </div>
-	</div>
-
-	<% @photos.each do |photo| %>
-		<div class="row">
-			<div class="col-xs-4 col-xs-offset-4">
-				<%= render photo %>
-			</div>
-		</div>
-	<% end %>
-	
+    </div>
+  <% end %>
 </div>
