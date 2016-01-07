@@ -1,5 +1,6 @@
 class Photo < ActiveRecord::Base
   has_many :votes, as: :votable
+  has_many :comments, dependent: :destroy
 
   def liked_by!(user)
     # create a new vote associating user and photo
