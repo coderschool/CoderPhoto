@@ -1,11 +1,18 @@
 <div id="timeline" style="margin-top:100px">
+  <div class="photos">
   <% @photos.each do |photo| %>
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <%= div_for photo, class: 'card' do %>
-          <%= render photo %>
-        <% end %>
-      </div>
-    </div>
+    <%= div_for photo, class: 'card' do %>
+      <%= render photo %>
+    <% end %>
   <% end %>
+  </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+$('.photos').masonry({
+  // options...
+  itemSelector: '.card',
+  columnWidth: 200,
+  gutter: 20
+});
+</script>
