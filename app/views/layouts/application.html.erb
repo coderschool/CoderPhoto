@@ -8,6 +8,31 @@
 </head>
 <body>
   <div class="container">
+    <div class="navbar bg-faded">
+      <a href="#" class="navbar-brand">CoderPhoto</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <%= link_to "Timeline", photos_path, class: 'nav-link' %>
+        </li>
+      <ul>
+      <ul class="nav navbar-nav pull-right">
+      <% if signed_in? %>
+        <li class="nav-item">
+          <%= link_to current_user.email, edit_user_registration_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
     <%= flash_messages %>
     <%= yield %>
   </div>
