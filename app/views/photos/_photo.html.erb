@@ -2,27 +2,34 @@
   <h6 class="card-title" style="margin-bottom: 0"><%= photo.username %></h6>
 </div>
 
-<%= image_tag(photo.url, class: "card-img-top img-responsive") %>
-<div class="card-block">
-  <p class="card-text"><%= photo.caption %></p>
-  <div class="text-muted pull-right"><%= photo.likes_count %> likes</div>
-  <% if signed_in? %>
-    <% if photo.liked_by?(current_user) %>
-      <%= link_to "Unlike", unlike_photo_path(photo), class: 'btn btn-danger', method: 'put', remote: true %>
-    <% else %>
-      <%= link_to "Like", like_photo_path(photo), class: 'btn btn-primary', method: 'put', remote: true %>
-    <% end %>
-  <% else %>
-    Please log in to to Like.
-  <% end %>
-</div>
+<%= image_tag(photo.url, class: "img-responsive") %>
 
 <div class="card-block">
-  <div class="comments">
-    <%= render "photo_comments", photo: photo %>
+  <p class="card-text"><%= photo.caption %></p>
+  <div class="row">
+    <div class="col-xs-6">
+      <% if signed_in? %>
+        <% if photo.liked_by?(current_user) %>
+          <%= link_to "Unlike", unlike_photo_path(photo), class: 'btn btn-danger btn-sm', method: 'put', remote: true %>
+        <% else %>
+          <%= link_to "Like", like_photo_path(photo), class: 'btn btn-primary btn-sm', method: 'put', remote: true %>
+        <% end %>
+      <% else %>
+        Please log in to to Like.
+      <% end %>
+    </div>
+    <div class="col-xs-6">
+      <div class="text-muted"><%= photo.likes_count %> likes</div>
+    </div>
   </div>
-  <%= form_for [photo, Comment.new], remote: true do |f| %>
-    <%= f.text_field :body, placeholder: "Add a comment" %>
-  <% end %>
+  <hr>
+  <div class="comments-wrapper">
+    <div class="comments">
+      <%= render "photo_comments", photo: photo %>
+    </div>
+    <%= form_for [photo, Comment.new], remote: true do |f| %>
+      <%= f.text_field :body, placeholder: "Add a comment", autocomplete: 'off' %>
+    <% end %>
+  </div>
 </div>
 

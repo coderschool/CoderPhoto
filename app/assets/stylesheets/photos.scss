@@ -1,1 +1,18 @@
 .card { width: 200px }
+.photos {
+  .card-block {
+    padding: 10px;
+  }
+}
+
+.comments-wrapper {
+  font-size: .8em;
+
+  .comment {
+    border-bottom: 1px solid #efefef;
+  }
+
+  input[type=text] {
+    width: 100%;
+  }
+}
