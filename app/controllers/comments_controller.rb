@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :load_photo
-  
   def new
   end
 
@@ -21,6 +19,19 @@ class CommentsController < ApplicationController
       format.js
     end
   end
+
+  def like
+    @comment = Comment.find params[:id]
+    @vote = @comment.liked_by! current_user
+  end
+
+  def unlike
+    @comment = Comment.find params[:id]
+    @comment.unliked_by! current_user
+    render 'like'
+  end
+
+  private
 
   def load_photo
     @photo = Photo.find params[:photo_id]

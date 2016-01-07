@@ -1,0 +1,14 @@
+<div>
+  <span class="pull-right comment-likes">
+    <span class="likes_count">
+      <%= comment.likes_count if comment.likes_count > 0 %>
+    </span>
+    <% if comment.liked_by?(current_user) %>
+      <%= link_to fa_icon('heart'), unlike_comment_path(comment), method: 'put', remote: true %>
+    <% else %>
+      <%= link_to fa_icon('heart-o'), like_comment_path(comment), method: 'put', remote: true %>
+    <% end %>
+  </span>
+  <strong><%= comment.user.email %></strong>
+</div>
+<%= comment.body %>
