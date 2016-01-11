@@ -6,3 +6,9 @@
     color: #ccc;
   }
 }
+
+form.new_comment input[type=text] {
+  border: none;
+  outline: none;
+  padding-top: 10px;
+}

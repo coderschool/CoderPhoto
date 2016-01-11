@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    load_photo
     @comment = @photo.comments.build(comment_params)
     @comment.user = current_user
     @comment.save
