@@ -4,14 +4,12 @@ one:
   username: sarahmgellar
   caption: "I just went to pick up my daughter from #kindergarten and this #camel was in the parking lot. Totally normal rt?? #onlyinlosangeles    "
   created_at: <%= Time.at(1447202511).utc.to_datetime %>
-  likes_count: 10561
   url: "https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/s640x640/sh0.08/e35/11849082_426726797521665_1141520805_n.jpg"  
 
 two:
   username: mewnittha
   caption: "#valentino #valentinothailand cr runnerize #ไม่ฝากร้านนะคะ"
   created_at: <%= Time.at(1447199499).utc.to_datetime %>
-  likes_count: 18345
   url: "https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/s640x640/sh0.08/e35/11380003_1646178038975946_2127607224_n.jpg"  
 
 
@@ -19,7 +17,6 @@ three:
   username: flaapavanelli
   caption: "Espia só um trechinho do vídeo que saiu hoje lá no meu canal! Tá demais, juroooo! Alem de dar algumas dicas, mostro também como arrumo minha mala para viagens... Ah, além de algumas palhaçadas (me enfiei até na mala como vocês podem ver 😂). Tem link na minha bio, é só clicar! Depois comentem lá dizendo o que acharam, fico muito feliz com vocês acompanhando, leio tudo sempre, não deixem de me falar o que querem ver por lá ❤️❤️ e quem não se inscreveu não perde tempo, assim vocês ficam ligadinhos sempre que rola vídeo novo (lembrando que toda terça, às 11hrs tem novidade)! Um beijoooooooo!"
   created_at: <%= Time.at(1447203033).utc.to_datetime %>
-  likes_count: 20759
   url: "https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/12106300_1654191448185727_2139224062_n.jpg"  
 
 
@@ -27,7 +24,6 @@ four:
   username: lira_galore
   caption: "Jeans @fashionnova 🔥"
   created_at: <%= Time.at(1447200411).utc.to_datetime %>
-  likes_count: 22928
   url: "https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/s640x640/sh0.08/e35/11379865_1669981996620099_1992350111_n.jpg"  
 
 
@@ -35,6 +31,5 @@ five:
   username: itsjojosiwa
   caption: "LINK IN MY BIOOOOOOOOO💗🎀💕💗🎀✌🏻️"
   created_at: <%= Time.at(1447195855).utc.to_datetime %>
-  likes_count: 39560
   url: "https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/s640x640/sh0.08/e35/12224088_1520958781550538_1859354118_n.jpg"  
 
