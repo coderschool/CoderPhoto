@@ -1,0 +1,9 @@
+vi:
+  timeline: "Dòng thời gian"
+  plural:
+    like:
+      one: "1 thích"
+      other: "%{count} thích"
+  like: "thích"
+  unlike: "hổng thích"
+
