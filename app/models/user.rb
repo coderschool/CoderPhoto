@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :votes, as: :voter
+  validates :time_zone, inclusion: { in: ActiveSupport::TimeZone.zones_map.keys }
+
+  def self.language_options
+    {"Vietnamese" => 'vi', "English" => 'en'}
+  end
 end

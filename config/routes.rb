@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'profile/edit'
+  patch 'profile/update'
+
   devise_for :users
   resources :photos do
     member do

@@ -24,8 +24,8 @@
               <%= I18n.locale %>
             </button>
             <div class="dropdown-menu">
-              <% %w(en vi).each do |locale| %>
-                <%= link_to locale, url_for(locale: locale), class: 'dropdown-item' %>
+              <% User.language_options.each do |language, locale| %>
+                <%= link_to language, url_for(locale: locale), class: 'dropdown-item' %>
               <% end %>
             </div>
           </div>

@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
     # request.remote_ip
     if params[:locale]
       I18n.locale = params[:locale]
+    else
+      I18n.locale = current_user.language
     end
   end
 end

@@ -1,0 +1,14 @@
+<h1>Profile</h1>
+
+<%= form_for @user, url: profile_update_path do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :time_zone %>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all, class: 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :language %>
+    <%= f.select :language, options_for_select(User.language_options, I18n.locale) %>
+  </fieldset>
+
+  <%= f.submit "Save", class: 'btn btn-secondary' %>
+<% end %>
