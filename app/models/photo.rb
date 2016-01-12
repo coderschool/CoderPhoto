@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  translates :caption
   has_many :votes, as: :votable
   has_many :comments, dependent: :destroy
 
