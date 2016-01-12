@@ -1,0 +1,14 @@
+<div class="col-sm-4">
+  <%= form_for @photo do |f| %>
+    <div class="card-block">
+      <h6 class="card-title" style="margin-bottom: 0">
+        <%= f.text_field :username %>
+      </h6>
+    </div>
+    <%= image_tag(@photo.url, class: "img-responsive") %>
+    <div class="card-block">
+      <p class="card-text"><%= f.text_area :caption %></p>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>
