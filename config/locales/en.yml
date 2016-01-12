@@ -21,3 +21,14 @@
 
 en:
   hello: "Hello world"
+  timeline: "Timeline"
+  like: "Like"
+  likes_count:
+    zero: "Zero like"
+    one: "%{count} like"
+    other: "%{count} likes"
+
+  photos:
+    index:
+      photos: "Pictures"
+      view_all_popular: "View all the most popular photos"
