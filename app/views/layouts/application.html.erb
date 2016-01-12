@@ -17,21 +17,34 @@
         </li>
       <ul>
       <ul class="nav navbar-nav pull-right">
-      <% if signed_in? %>
         <li class="nav-item">
-          <%= link_to current_user.email, edit_user_registration_path, class: 'nav-link' %>
+          <!-- Single button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= I18n.locale %>
+            </button>
+            <div class="dropdown-menu">
+              <% %w(en vi).each do |locale| %>
+                <%= link_to locale, url_for(locale: locale), class: 'dropdown-item' %>
+              <% end %>
+            </div>
+          </div>
         </li>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: 'nav-link' %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Sign in", new_user_session_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %>
-        </li>
-      <% end %>
+        <% if signed_in? %>
+          <li class="nav-item">
+            <%= link_to current_user.email, edit_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign in", new_user_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
     <%= flash_messages %>
