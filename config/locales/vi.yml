@@ -6,4 +6,6 @@ vi:
       other: "%{count} thích"
   like: "thích"
   unlike: "hổng thích"
+  log_out: "Đăng xuất"
+  profile: "Hồ sơ"
 

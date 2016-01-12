@@ -35,7 +35,7 @@
             <%= link_to current_user.email, edit_user_registration_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: 'nav-link' %>
+            <%= link_to t('log_out'), destroy_user_session_path, method: 'delete', class: 'nav-link' %>
           </li>
         <% else %>
           <li class="nav-item">
@@ -46,6 +46,12 @@
           </li>
         <% end %>
       </ul>
+    </div>
+
+    <div style="text-align:right">
+      <span class="label label-primary">
+        <%= Time.current %>
+      </span>
     </div>
     <%= flash_messages %>
     <%= yield %>
