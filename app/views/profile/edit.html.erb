@@ -1,0 +1,16 @@
+<h1><%= t '.edit_profile' %></h1>
+<p>Find me in app/views/profile/edit.html.erb</p>
+
+<%= form_for current_user, url: profile_update_path do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :time_zone %>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :locale, User.human_attribute_name(:locale) %>
+    <%= f.select :locale, options_for_select(User.language_options) %>
+  </fieldset>
+
+  <%= f.submit "Save", class: 'btn btn-secondary' %>
+<% end %>

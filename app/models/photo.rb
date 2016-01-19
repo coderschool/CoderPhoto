@@ -1,6 +1,7 @@
 class Photo < ActiveRecord::Base
   has_many :votes, as: :votable
   has_many :comments, dependent: :destroy
+  translates :caption
 
   def liked_by!(user)
     # create a new vote associating user and photo
@@ -21,5 +22,11 @@ class Photo < ActiveRecord::Base
     # votes.length
     # votes.count
     votes.size
+  end
+
+  def self.import_from_instagram
+    Instagram.client.media_popular.each do |item|
+      @record = Photo.create username: item.user.username, caption: item.caption.try(:text), url: item.images.low_resolution.url
+    end
   end
 end

@@ -49,3 +49,5 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'sucker_punch', '~> 1.0'
 gem "font-awesome-rails"
+gem 'instagram'
+gem 'globalize'

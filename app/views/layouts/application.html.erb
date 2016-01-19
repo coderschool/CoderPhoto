@@ -35,16 +35,17 @@
       </ul>
     </div>
     <div style="text-align: right">
-    <div class="btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= I18n.locale %>
-      </button>
-      <div class="dropdown-menu">
-        <% User.language_options.each do |language, locale| %>
-          <%= link_to language, url_for(locale: locale), class: 'dropdown-item' %>
-        <% end %>
+      <span class="label label-primary"><%= Time.current %></span>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= I18n.locale %>
+        </button>
+        <div class="dropdown-menu">
+          <% User.language_options.each do |language, locale| %>
+            <%= link_to language, url_for(locale: locale), class: 'dropdown-item' %>
+          <% end %>
+        </div>
       </div>
-    </div>
     </div>
     <%= flash_messages %>
     <%= yield %>

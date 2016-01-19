@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :votes, as: :voter
+  validates :locale, presence: true, on: :update
 
   def self.language_options
     {"English" => "en", "Vietnamese" => "vi"}

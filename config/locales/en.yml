@@ -32,3 +32,6 @@ en:
     index:
       photos: "Pictures"
       view_all_popular: "View all the most popular photos"
+  profile:
+    edit:
+      edit_profile: "Edit Profile"

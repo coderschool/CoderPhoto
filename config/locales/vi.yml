@@ -2,3 +2,10 @@ vi:
   timeline: "Dòng thời gian"
   like: "Thích"
   likes_count: "%{count} thích"
+
+  activerecord:
+    models:
+      user: "Người Dùng"
+    attributes:
+      user:
+        locale: "Ngôn ngữ"

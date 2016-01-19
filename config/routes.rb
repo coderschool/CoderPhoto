@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
 
   scope ':locale', locale: /vi|en/ do
+    get 'profile/edit'
+    patch 'profile/update'
     resources :photos do
       member do
         put 'like'
