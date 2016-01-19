@@ -27,6 +27,6 @@ class Comment < ActiveRecord::Base
   end
 
   def as_json(options = {})
-    super(options.merge(include: [:user, :photo]))
+    super(options.merge(include: [:user, :photo, votes: {include: :voter}]))
   end
 end
