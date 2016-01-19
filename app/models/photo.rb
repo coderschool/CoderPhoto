@@ -1,6 +1,7 @@
 class Photo < ActiveRecord::Base
   has_many :votes, as: :votable
   has_many :comments, dependent: :destroy
+  belongs_to :user
   translates :caption
 
   def liked_by!(user)

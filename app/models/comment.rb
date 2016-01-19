@@ -25,4 +25,8 @@ class Comment < ActiveRecord::Base
     # votes.count
     votes.size
   end
+
+  def as_json(options = {})
+    super(options.merge(include: [:user, :photo]))
+  end
 end
