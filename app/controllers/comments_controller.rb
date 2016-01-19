@@ -1,4 +1,14 @@
 class CommentsController < ApplicationController
+  # /photos/:photo_id/comments.json
+  def index
+    @photo = Photo.find params[:photo_id]
+    respond_to do |format|
+      format.json do
+        render json: @photo.comments
+      end
+    end
+  end
+
   def new
   end
 

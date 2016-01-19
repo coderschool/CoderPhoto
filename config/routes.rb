@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
   devise_for :users
+  get 'api' => 'welcome#api'
 
   scope ':locale', locale: /vi|en/ do
     get 'profile/edit'
