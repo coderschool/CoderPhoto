@@ -1,4 +1,6 @@
+require './app/gallery'
 Rails.application.routes.draw do
+  get '/gallery' => GalleryApp.new
   devise_for :users
   get 'api' => 'welcome#api'
 
