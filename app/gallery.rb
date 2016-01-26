@@ -4,7 +4,8 @@ require 'builder'
 @dbconfig = YAML.load(File.read('config/database.yml'))
 ActiveRecord::Base.establish_connection @dbconfig[@environment]
 
-class Photo < ActiveRecord::Base
+class GalleryPhoto < ActiveRecord::Base
+  self.table_name = "photos"
 end
 
 class GalleryApp
