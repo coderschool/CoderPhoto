@@ -2,34 +2,33 @@ Rails.application.routes.draw do
   devise_for :users
   get 'api' => 'welcome#api'
 
-  scope ':locale', locale: /vi|en/ do
-    get 'profile/edit'
-    patch 'profile/update'
-    resources :photos do
-      member do
-        put 'like'
-        put 'unlike'
-      end
-
-      resources :comments
+  # scope ':locale', locale: /vi|en/ do
+  get 'profile/edit'
+  patch 'profile/update'
+  resources :photos do
+    member do
+      put 'like'
+      put 'unlike'
     end
 
-    resources :comments do
-      member do
-        put 'like'
-        put 'unlike'
-      end
-    end
-
-    # The priority is based upon order of creation: first created -> highest priority.
-    # See how all your routes lay out with "rake routes".
-
-    # You can have the root of your site routed with "root"
-    root 'welcome#index'
+    resources :comments
   end
 
-  get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
-  get '', to: redirect("/#{I18n.default_locale}")
+  resources :comments do
+    member do
+      put 'like'
+      put 'unlike'
+    end
+  end
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  root 'welcome#index'
+
+  # get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  # get '', to: redirect("/#{I18n.default_locale}")
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

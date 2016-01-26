@@ -5,5 +5,5 @@ window.PhotoJS =
       columnWidth: 200
       gutter: 20
 
-$(document).on "page:change", ->
+$(document).on "page:change load", ->
   window.PhotoJS.setupMasonry()

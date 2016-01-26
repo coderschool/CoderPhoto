@@ -51,3 +51,7 @@ gem 'sucker_punch', '~> 1.0'
 gem "font-awesome-rails"
 gem 'instagram'
 gem 'globalize'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end

@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    load_photo
+    @photo = Photo.find params[:photo_id]
     @comment = @photo.comments.build(comment_params)
     @comment.user = current_user
     @comment.save
@@ -43,10 +43,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  def load_photo
-    @photo = Photo.find params[:photo_id]
-  end
 
   def comment_params
     params.require(:comment).permit(:body)

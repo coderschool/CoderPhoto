@@ -27,8 +27,10 @@
     <div class="comments">
       <%= render "photo_comments", photo: photo %>
     </div>
-    <%= form_for [photo, Comment.new], remote: true do |f| %>
-      <%= f.text_field :body, placeholder: "Add a comment", autocomplete: 'off' %>
+    <% if signed_in? %>
+      <%= form_for [photo, Comment.new], remote: true do |f| %>
+        <%= f.text_field :body, placeholder: "Add a comment", autocomplete: 'off' %>
+      <% end %>
     <% end %>
   </div>
 </div>
