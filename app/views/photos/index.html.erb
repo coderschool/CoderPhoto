@@ -1,17 +1,10 @@
-<div class="container">
-	<br/>		
-	<div class="jumbotron">
-        <h1 class="display-3">CoderPhoto</h1>
-        <p class="lead">@chug2k and @harley's lab project to show you trending photos from Instagram</p>
-      </div>
-	</div>
-
-	<% @photos.each do |photo| %>
-		<div class="row">
-			<div class="col-xs-4 col-xs-offset-4">
-				<%= render photo %>
-			</div>
-		</div>
-	<% end %>
-	
+<p></p>
+<div class="jumbotron">
+  <h1 class="display-3">CoderPhoto</h1>
+  <p class="lead">@chug2k and @harley's lab project to show you trending photos from Instagram</p>
 </div>
+
+<% @photos.each do |photo| %>
+  <%= render photo %>
+<% end %>
+

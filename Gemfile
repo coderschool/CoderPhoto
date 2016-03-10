@@ -46,3 +46,5 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
+# we use this gem directly instead of via rails-assets.org because rails-assets.org will go away
+gem 'rails-assets-tether'

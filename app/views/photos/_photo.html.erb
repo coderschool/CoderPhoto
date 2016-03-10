@@ -4,7 +4,7 @@
 		<h6 class="card-title"><%= photo.username %></h6>
 		<p class="card-subtitle text-muted"><%= photo.likes_count %> likes</p>
 	</div>
-  	<%= image_tag(photo.url, class: "card-img-top img-responsive") %>
+  <%= image_tag(photo.url, class: "card-img") %>
 	<div class="card-block">
 	    <p class="card-text"><%= photo.caption %></p>
 	    <a href="#" class="btn btn-primary">Button</a>
