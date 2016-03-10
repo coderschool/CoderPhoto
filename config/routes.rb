@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :photos do 
-    collection do
-      get 'index'
-    end
-  end
+  resources :photos
 
   root 'photos#index'
 
